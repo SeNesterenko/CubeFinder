@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameMap : MonoBehaviour, IStateContext
 {
-    [SerializeField] private Canvas _gameScreen;
     [SerializeField] private GameNode[] _gameNodesPrefabs;
     [SerializeField] private GameNode _currentTargetNode;
     [SerializeField] private GameNode _previousTargetNode;
