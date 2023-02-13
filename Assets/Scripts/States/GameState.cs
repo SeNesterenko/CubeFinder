@@ -7,21 +7,19 @@ namespace States
     public class GameState : BaseState
     {
         [SerializeField] private GameController _gameController;
-
-        private Canvas _gameScreen;
+        [SerializeField] private Canvas _gameScreen;
+        
         private IStateContext _context;
         
-        public override void Initialize(StateMachine.StateMachine stateMachine, string name = "GameState")
+        public override void Initialize(StateMachine.StateMachine stateMachine)
         {
-            base.Initialize(stateMachine, name);
+            base.Initialize(stateMachine);
         }
 
         public override void EnterWithContext(IStateContext context)
         {
             base.Enter();
-            
             _context = context;
-            _gameScreen = _context.GetCurrentGameScreen();
 
             _gameScreen.gameObject.SetActive(true);
             _gameController.Initialize(_context.GetCurrentLevelGameNodes(), _context.GetCurrentLevelTargetNode());

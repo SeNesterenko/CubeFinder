@@ -10,11 +10,6 @@ public class GameMap : MonoBehaviour, IStateContext
     [SerializeField] private GameNode _previousTargetNode;
     [SerializeField] private GameMap _nextLevel;
 
-    public Canvas GetCurrentGameScreen()
-    {
-        return _gameScreen;
-    }
-
     public GameNode[] GetCurrentLevelGameNodes()
     {
         return _gameNodesPrefabs;

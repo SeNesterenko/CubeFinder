@@ -4,13 +4,10 @@ namespace StateMachine
 {
     public class BaseState : MonoBehaviour
     {
-        [HideInInspector] public string Name;
         protected StateMachine StateMachine;
-
-        //TODO: Maybe remove name?
-        public virtual void Initialize(StateMachine stateMachine, string name)
+        
+        public virtual void Initialize(StateMachine stateMachine)
         {
-            Name = name;
             StateMachine = stateMachine;
         }
         

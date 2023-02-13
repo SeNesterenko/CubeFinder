@@ -12,9 +12,9 @@ namespace States
         private IStateContext _context;
         private List<GameNode> _previousResults;
 
-        public override void Initialize(StateMachine.StateMachine stateMachine, string name = "GameOverState")
+        public override void Initialize(StateMachine.StateMachine stateMachine)
         {
-            base.Initialize(stateMachine, name);
+            base.Initialize(stateMachine);
         }
 
         public override void EnterWithContext(IStateContext context)

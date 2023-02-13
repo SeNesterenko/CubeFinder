@@ -19,9 +19,9 @@ namespace States
         [SerializeField] private GameMap _lettersGameMapPrefab;
         [SerializeField] private GameMap _animalsGameMapPrefab;
         
-        public override void Initialize(StateMachine.StateMachine stateMachine, string name = "SelectionLevelParametersState")
+        public override void Initialize(StateMachine.StateMachine stateMachine)
         {
-            base.Initialize(stateMachine, name);
+            base.Initialize(stateMachine);
         }
 
         public override void Enter()
