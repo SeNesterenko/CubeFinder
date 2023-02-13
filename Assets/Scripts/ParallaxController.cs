@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class ParallaxController : MonoBehaviour
@@ -19,20 +18,5 @@ public class ParallaxController : MonoBehaviour
 
         _targetPreviousPosition = _followingTarget.position;
         transform.position += delta * _parallaxStrength;
-    }
-}
-
-public class CameraMovementController : MonoBehaviour
-{
-    private Camera _camera;
-    
-    private void Awake()
-    {
-        _camera = Camera.main;
-    }
-
-    private void Update()
-    {
-        
     }
 }
