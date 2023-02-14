@@ -19,6 +19,7 @@ namespace States
         [SerializeField] private GameMap _lettersGameMapFirstLevelPrefab;
         [SerializeField] private GameMap _animalsGameMapFirstLevelPrefab;
         
+        // ReSharper disable once RedundantOverriddenMember
         public override void Initialize(StateMachine.StateMachine stateMachine)
         {
             base.Initialize(stateMachine);
@@ -26,13 +27,11 @@ namespace States
 
         public override void Enter()
         {
-            base.Enter();
             _currentScreen.gameObject.SetActive(true);
         }
 
         public override void Exit()
         {
-            base.Exit();
             _currentScreen.gameObject.SetActive(false);
         }
 

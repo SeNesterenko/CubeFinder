@@ -22,6 +22,7 @@ namespace States
         private GameNode _target;
         private GameNode _nextTarget;
 
+        // ReSharper disable once RedundantOverriddenMember
         public override void Initialize(StateMachine.StateMachine stateMachine)
         {
             base.Initialize(stateMachine);
@@ -29,8 +30,6 @@ namespace States
 
         public override void EnterWithContext(IStateContext context)
         {
-            base.Enter();
-
             var rectTransform = _buttonRestart.gameObject.GetComponent<RectTransform>();
             ReloadButtonPositions(rectTransform);
             
@@ -55,8 +54,6 @@ namespace States
 
         public override void Exit()
         {
-            base.Exit();
-
             if (_target != null)
             {
                 Destroy(_target.gameObject);

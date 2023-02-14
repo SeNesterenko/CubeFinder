@@ -15,6 +15,7 @@ namespace States
         
         private IStateContext _context;
         
+        // ReSharper disable once RedundantOverriddenMember
         public override void Initialize(StateMachine.StateMachine stateMachine)
         {
             base.Initialize(stateMachine);
@@ -22,7 +23,6 @@ namespace States
 
         public override void EnterWithContext(IStateContext context)
         {
-            base.Enter();
             _context = context;
 
             _text1.text = "Find" + _context.GetCurrentLevelTargetNode().GetName();
@@ -34,8 +34,6 @@ namespace States
 
         public override void Exit()
         {
-            base.Exit();
-            
             _gameController.ResetNodes();
             _gameScreen.gameObject.SetActive(false);
         }
