@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using JetBrains.Annotations;
 using StateMachine;
 using UnityEngine;
@@ -8,9 +7,11 @@ namespace States
     public class GameOverState : BaseState
     {
         [SerializeField] private Canvas _gameOverScreen;
-
+        [SerializeField] private Vector3 _scaleWonNode;
+        [SerializeField] private Vector2 _rectScaleWonNode;
+        [SerializeField] private Vector3 _positionWonNode;
+        
         private IStateContext _context;
-        private List<GameNode> _previousResults;
 
         public override void Initialize(StateMachine.StateMachine stateMachine)
         {
@@ -22,6 +23,10 @@ namespace States
             base.Enter();
             _gameOverScreen.gameObject.SetActive(true);
             _context = context;
+
+            var target = Instantiate(_context.GetPreviousTargetNode(), _gameOverScreen.transform);
+            var targetRectTransform = target.gameObject.GetComponent<RectTransform>();
+            ConfigureTargetNode(targetRectTransform);
         }
         
         public override void Exit()
@@ -42,6 +47,13 @@ namespace States
         public void ContinueGame()
         {
             StateMachine.ChangeStateWithContext(((GameStateMachine) StateMachine).GetGameState(), _context);
+        }
+
+        private void ConfigureTargetNode(RectTransform nodeRectTransform)
+        {
+            nodeRectTransform.localScale = _scaleWonNode;
+            nodeRectTransform.localPosition = _positionWonNode;
+            nodeRectTransform.sizeDelta = _rectScaleWonNode;
         }
     }
 }
