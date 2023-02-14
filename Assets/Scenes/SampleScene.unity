@@ -452,7 +452,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cars
+  m_text: 'Numbers
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 479c5002827b8af4e9bc0062a6f25b79, type: 2}
   m_sharedMaterial: {fileID: -1826494525677933529, guid: 479c5002827b8af4e9bc0062a6f25b79, type: 2}
@@ -461,8 +463,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190853
-  m_fontColor: {r: 0.01886791, g: 0.011330057, b: 0.0004271974, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -479,8 +481,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -548,7 +550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &369301413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,7 +564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentScreen: {fileID: 369301416}
-  _carsGameMapFirstLevelPrefab: {fileID: 0}
+  _numbersGameMapFirstLevelPrefab: {fileID: 6493550036384826858, guid: 0db7b87b5043c5c42b29143b583f1a84, type: 3}
   _lettersGameMapFirstLevelPrefab: {fileID: 6493550036384826858, guid: 592a82bf5e728e749b2870066ec9530f, type: 3}
   _animalsGameMapFirstLevelPrefab: {fileID: 0}
 --- !u!114 &369301414
@@ -2251,7 +2253,7 @@ GameObject:
   - component: {fileID: 1967505950}
   - component: {fileID: 1967505949}
   m_Layer: 5
-  m_Name: Cars
+  m_Name: Numbers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

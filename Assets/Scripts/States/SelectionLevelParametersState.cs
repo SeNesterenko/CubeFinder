@@ -8,14 +8,14 @@ namespace States
     {
         private enum LevelParams
         {
-            Cars = 0,
+            Numbers = 0,
             Letters = 1,
             Animals = 2
         }
         
         [SerializeField] private Canvas _currentScreen;
         
-        [SerializeField] private GameMap _carsGameMapFirstLevelPrefab;
+        [SerializeField] private GameMap _numbersGameMapFirstLevelPrefab;
         [SerializeField] private GameMap _lettersGameMapFirstLevelPrefab;
         [SerializeField] private GameMap _animalsGameMapFirstLevelPrefab;
         
@@ -41,8 +41,8 @@ namespace States
         {
             switch (typeParams)
             {
-                case  (int)LevelParams.Cars:
-                    StateMachine.ChangeStateWithContext(((GameStateMachine) StateMachine).GetGameState(), _carsGameMapFirstLevelPrefab);
+                case  (int)LevelParams.Numbers:
+                    StateMachine.ChangeStateWithContext(((GameStateMachine) StateMachine).GetGameState(), _numbersGameMapFirstLevelPrefab);
                     break;
                 case  (int)LevelParams.Letters:
                     StateMachine.ChangeStateWithContext(((GameStateMachine) StateMachine).GetGameState(), _lettersGameMapFirstLevelPrefab);
