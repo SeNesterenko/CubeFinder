@@ -42,4 +42,9 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("Fail");
     }
+
+    public void ResetNodes()
+    {
+        Destroy(_gameMap.gameObject);
+    }
 }
