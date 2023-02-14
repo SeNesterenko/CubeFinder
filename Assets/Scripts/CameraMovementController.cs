@@ -4,7 +4,7 @@ public class CameraMovementController : MonoBehaviour
 {
     [SerializeField] private float _speed = 2f;
     
-    private Vector3 _direction = Vector3.right;
+    private readonly Vector3 _direction = Vector3.right;
 
     private void Update()
     {

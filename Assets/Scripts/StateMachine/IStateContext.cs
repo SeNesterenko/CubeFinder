@@ -1,10 +1,9 @@
-using UnityEngine;
-
 namespace StateMachine
 {
     public interface IStateContext
     {
-        public GameNode[] GetCurrentLevelGameNodes();
+        public GameMap GetCurrentLevel();
+        public GameNode[] GetGameNodes();
         public GameNode GetCurrentLevelTargetNode();
         public GameNode GetPreviousTargetNode();
         public GameMap GetNextLevel();

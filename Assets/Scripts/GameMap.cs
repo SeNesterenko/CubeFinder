@@ -3,14 +3,19 @@ using UnityEngine;
 
 public class GameMap : MonoBehaviour, IStateContext
 {
-    [SerializeField] private GameNode[] _gameNodesPrefabs;
     [SerializeField] private GameNode _currentTargetNode;
     [SerializeField] private GameNode _previousTargetNode;
     [SerializeField] private GameMap _nextLevel;
-
-    public GameNode[] GetCurrentLevelGameNodes()
+    [SerializeField] private GameNode[] _gameNodes;
+    
+    public GameMap GetCurrentLevel()
     {
-        return _gameNodesPrefabs;
+        return this;
+    }
+
+    public GameNode[] GetGameNodes()
+    {
+        return _gameNodes;
     }
 
     public GameNode GetCurrentLevelTargetNode()

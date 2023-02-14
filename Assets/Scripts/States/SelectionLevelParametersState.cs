@@ -13,11 +13,11 @@ namespace States
             Animals = 2
         }
         
-        [SerializeField] private Canvas _gameMapsScreen;
+        [SerializeField] private Canvas _currentScreen;
         
-        [SerializeField] private GameMap _carsGameMapPrefab;
-        [SerializeField] private GameMap _lettersGameMapPrefab;
-        [SerializeField] private GameMap _animalsGameMapPrefab;
+        [SerializeField] private GameMap _carsGameMapFirstLevelPrefab;
+        [SerializeField] private GameMap _lettersGameMapFirstLevelPrefab;
+        [SerializeField] private GameMap _animalsGameMapFirstLevelPrefab;
         
         public override void Initialize(StateMachine.StateMachine stateMachine)
         {
@@ -27,13 +27,13 @@ namespace States
         public override void Enter()
         {
             base.Enter();
-            _gameMapsScreen.gameObject.SetActive(true);
+            _currentScreen.gameObject.SetActive(true);
         }
 
         public override void Exit()
         {
             base.Exit();
-            _gameMapsScreen.gameObject.SetActive(false);
+            _currentScreen.gameObject.SetActive(false);
         }
 
         //Call it when selecting the level parameters
@@ -43,13 +43,13 @@ namespace States
             switch (typeParams)
             {
                 case  (int)LevelParams.Cars:
-                    StateMachine.ChangeStateWithContext(((GameStateMachine) StateMachine).GetGameState(), _carsGameMapPrefab);
+                    StateMachine.ChangeStateWithContext(((GameStateMachine) StateMachine).GetGameState(), _carsGameMapFirstLevelPrefab);
                     break;
                 case  (int)LevelParams.Letters:
-                    StateMachine.ChangeStateWithContext(((GameStateMachine) StateMachine).GetGameState(), _lettersGameMapPrefab);
+                    StateMachine.ChangeStateWithContext(((GameStateMachine) StateMachine).GetGameState(), _lettersGameMapFirstLevelPrefab);
                     break;
                 case  (int)LevelParams.Animals:
-                    StateMachine.ChangeStateWithContext(((GameStateMachine) StateMachine).GetGameState(), _animalsGameMapPrefab);
+                    StateMachine.ChangeStateWithContext(((GameStateMachine) StateMachine).GetGameState(), _animalsGameMapFirstLevelPrefab);
                     break;
             }
         }

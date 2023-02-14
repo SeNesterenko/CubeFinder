@@ -22,7 +22,7 @@ namespace States
             _context = context;
 
             _gameScreen.gameObject.SetActive(true);
-            _gameController.Initialize(_context.GetCurrentLevelGameNodes(), _context.GetCurrentLevelTargetNode());
+            _gameController.Initialize(_context.GetCurrentLevel(), _context.GetCurrentLevelTargetNode(), ChangeState);
         }
 
         public override void Exit()
