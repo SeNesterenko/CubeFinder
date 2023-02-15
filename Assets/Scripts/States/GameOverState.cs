@@ -8,19 +8,22 @@ namespace States
     public class GameOverState : BaseState
     {
         [SerializeField] private Canvas _gameOverScreen;
-        [SerializeField] private Vector3 _scaleWonNode;
-        [SerializeField] private Vector2 _rectScaleWonNode;
-        [SerializeField] private Vector3 _positionWonNode;
 
         [SerializeField] private Button _buttonContinue;
         [SerializeField] private Button _buttonRestart;
 
-        [SerializeField] private Vector3 _defaultButtonRestartPosition;
-        [SerializeField] private Vector3 _aloneButtonRestartPosition;
-        
+        [SerializeField] private ParticleSystem _winEffect;
+
         private IStateContext _context;
         private GameNode _target;
         private GameNode _nextTarget;
+
+        private static readonly Vector3 DefaultButtonRestartPosition = new(-100f, -120f, 0);
+        private static readonly Vector3 AloneButtonRestartPosition = new(0f, -120f, 0);
+        
+        private static readonly Vector3 ScaleWonNode = new(0.5f, 0.5f, 1f);
+        private static readonly Vector2 RectScaleWonNode = new(600f, 400f);
+        private static readonly Vector3 PositionWonNode = new(0f, 80f, 0f);
 
         // ReSharper disable once RedundantOverriddenMember
         public override void Initialize(StateMachine.StateMachine stateMachine)
@@ -38,8 +41,10 @@ namespace States
             if (context == null)
             {
                 _buttonContinue.gameObject.SetActive(false);
-                rectTransform.localPosition = _aloneButtonRestartPosition;
+                rectTransform.localPosition = AloneButtonRestartPosition;
+                
                 _nextTarget = InstantiateGameNode(_nextTarget);
+                _winEffect.Play();
                 return;
             }
             
@@ -48,6 +53,7 @@ namespace States
             
             _target = _context.GetPreviousTargetNode();
             _target = InstantiateGameNode(_target);
+            _winEffect.Play();
             
             Debug.Log(_nextTarget.GetName());
         }
@@ -61,10 +67,11 @@ namespace States
             }
             else
             {
-                Destroy(_nextTarget);
+                Destroy(_nextTarget.gameObject);
                 _nextTarget = null;
             }
             
+            _winEffect.Stop();
             _gameOverScreen.gameObject.SetActive(false);
         }
         
@@ -85,17 +92,21 @@ namespace States
         private void ReloadButtonPositions(RectTransform reloadButtonPosition)
         {
             _buttonContinue.gameObject.SetActive(true);
-            reloadButtonPosition.localPosition = _defaultButtonRestartPosition;
+            reloadButtonPosition.localPosition = DefaultButtonRestartPosition;
         }
         
         private GameNode InstantiateGameNode(GameNode node)
         {
             node = Instantiate(node, _gameOverScreen.transform);
+            var animator = node.GetComponent<Animator>();
             var nodeRectTransform = node.gameObject.GetComponent<RectTransform>();
-            
-            nodeRectTransform.localScale = _scaleWonNode;
-            nodeRectTransform.localPosition = _positionWonNode;
-            nodeRectTransform.sizeDelta = _rectScaleWonNode;
+
+            animator.enabled = false;
+            nodeRectTransform.localScale = ScaleWonNode;
+            nodeRectTransform.localPosition = PositionWonNode;
+            nodeRectTransform.sizeDelta = RectScaleWonNode;
+
+            node.VibrateNode();
 
             return node;
         }
