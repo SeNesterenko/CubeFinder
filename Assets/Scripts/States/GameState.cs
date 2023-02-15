@@ -1,3 +1,4 @@
+using System;
 using JetBrains.Annotations;
 using StateMachine;
 using TMPro;
@@ -12,9 +13,9 @@ namespace States
 
         [SerializeField] private TMP_Text _text1;
         [SerializeField] private TMP_Text _text2;
-        
+
         private IStateContext _context;
-        
+
         // ReSharper disable once RedundantOverriddenMember
         public override void Initialize(StateMachine.StateMachine stateMachine)
         {
@@ -27,7 +28,7 @@ namespace States
 
             _text1.text = "Find" + _context.GetCurrentLevelTargetNode().GetName();
             _text2.text = "Find" + _context.GetCurrentLevelTargetNode().GetName();
-            
+
             _gameScreen.gameObject.SetActive(true);
             _gameController.Initialize(_context.GetCurrentLevel(), _context.GetCurrentLevelTargetNode(), ChangeState);
         }
@@ -42,7 +43,8 @@ namespace States
         [UsedImplicitly]
         public void ChangeState()
         {
-            StateMachine.ChangeStateWithContext(((GameStateMachine) StateMachine).GetGameOverState(), _context.GetNextLevel());
+            StateMachine.ChangeStateWithContext(((GameStateMachine)StateMachine).GetGameOverState(),
+                _context.GetNextLevel());
         }
     }
 }

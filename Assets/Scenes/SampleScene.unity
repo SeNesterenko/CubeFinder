@@ -566,7 +566,7 @@ MonoBehaviour:
   _currentScreen: {fileID: 369301416}
   _numbersGameMapFirstLevelPrefab: {fileID: 6493550036384826858, guid: 0db7b87b5043c5c42b29143b583f1a84, type: 3}
   _lettersGameMapFirstLevelPrefab: {fileID: 6493550036384826858, guid: 592a82bf5e728e749b2870066ec9530f, type: 3}
-  _animalsGameMapFirstLevelPrefab: {fileID: 0}
+  _animalsGameMapFirstLevelPrefab: {fileID: 6493550036384826858, guid: c87f994edc82f5a41a11d0107d1fa091, type: 3}
 --- !u!114 &369301414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -652,6 +652,53 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &421741927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 421741929}
+  - component: {fileID: 421741928}
+  m_Layer: 0
+  m_Name: NodeSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &421741928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421741927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bdf772c9151b3b46ba5217b428d6a66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _numbersNodes: []
+  _maxNodes: 0
+  quantityNodesPerStep: 0
+--- !u!4 &421741929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421741927}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.38899156, y: 0.84358513, z: 89.69785}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &425622540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,8 +1284,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 130
+  m_fontSizeBase: 130
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -12164,8 +12211,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 130
+  m_fontSizeBase: 130
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
