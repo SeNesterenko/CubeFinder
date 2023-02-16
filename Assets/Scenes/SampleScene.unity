@@ -268,7 +268,7 @@ Animator:
   m_GameObject: {fileID: 18551611}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c464f14a794368141903451e1e97cf6b, type: 2}
+  m_Controller: {fileID: 9100000, guid: cdac50a28dce7bd43b972081c58f46d3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -565,6 +565,7 @@ GameObject:
   - component: {fileID: 369301415}
   - component: {fileID: 369301414}
   - component: {fileID: 369301413}
+  - component: {fileID: 369301418}
   m_Layer: 5
   m_Name: SelectionLevelScreen
   m_TagString: Untagged
@@ -584,7 +585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5a77e44ce4f4f9488fdf94560d30ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentScreen: {fileID: 369301416}
+  _selectionLevelScreen: {fileID: 369301416}
   _defaultGameMap: {fileID: 3362309106669496429, guid: df9f6fbd720904349862d22eba28ec9b, type: 3}
 --- !u!114 &369301414
 MonoBehaviour:
@@ -669,6 +670,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &369301418
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369301412}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &421741927
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,7 +693,7 @@ GameObject:
   - component: {fileID: 421741929}
   - component: {fileID: 421741928}
   m_Layer: 0
-  m_Name: NodeSpawner
+  m_Name: GameMapCreater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -699,8 +712,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameMapPrefab: {fileID: 3362309106669496429, guid: df9f6fbd720904349862d22eba28ec9b, type: 3}
-  _lettersNodes: []
-  _animalsNodes: []
+  _lettersNodes:
+  - {fileID: 537396502959134302, guid: d4ddea0de6ab80547ad9d88210c73959, type: 3}
+  - {fileID: 573603045628213630, guid: fc1c67f32096dfb418446f6334579b56, type: 3}
+  - {fileID: 2024750144036770849, guid: bdd68b15f4c4d0e4cb1b325700a16450, type: 3}
+  - {fileID: 5043908274570741449, guid: a6e7c0d140ec87e40968911d4138f59d, type: 3}
+  - {fileID: 559529702582296542, guid: ae6b1d0fbd813294cb4b38deb04ba4e1, type: 3}
+  - {fileID: 5717907020158454733, guid: 96472c2d1b1350d409ff28de80d8281b, type: 3}
+  - {fileID: 2918609291294015065, guid: 5cd8524f05daeaf40845dbf458501bfb, type: 3}
+  - {fileID: 4039601475630568066, guid: 330a71e6fb5909c4da06ac0e89b7b7f5, type: 3}
+  - {fileID: 2774879062948503197, guid: 2f1be95f0281217489e4047313fddefd, type: 3}
+  - {fileID: 7969016211820605170, guid: aa18685029d3ad04ab72fc329bee5f4f, type: 3}
+  - {fileID: 1744622489823484605, guid: 2b86aa5f18adecd4981290be5640498d, type: 3}
+  - {fileID: 9151572970832887078, guid: 48a53dbff8bc57d4e838a90eb961c20e, type: 3}
+  - {fileID: 7805667779956449834, guid: d6d25651d100221459e7e9c5e58ea6f1, type: 3}
+  - {fileID: 2126689979340741690, guid: 1c1a7bce716da064a802131fca52fff1, type: 3}
+  - {fileID: 3248346148073394563, guid: 6ac877f1e639a0042b42b2b8cf66f878, type: 3}
+  - {fileID: 5030174225350969153, guid: b7276397a8e096a4ba05dc9882c4568f, type: 3}
+  - {fileID: 4260497691269759233, guid: 534344885359573428edbac358fa5993, type: 3}
+  - {fileID: 8103696652007094797, guid: bcb852a10ced8b24491c3fb8bcbcce28, type: 3}
+  _animalsNodes:
+  - {fileID: 537396502959134302, guid: e360605c08b8b9c4f8bcde4d5fc0540f, type: 3}
+  - {fileID: 537396502959134302, guid: 0197669b3f05c06489c6147b1bb0a874, type: 3}
+  - {fileID: 4987526199018819750, guid: e10cc6c745014c14f8ef1b55451ba75c, type: 3}
+  - {fileID: 4555505408234823838, guid: 894fb1996a3af6843b5d2db94508f596, type: 3}
+  - {fileID: 573603045628213630, guid: 8163230540063fe4991396893030da2f, type: 3}
+  - {fileID: 4039601475630568066, guid: 09cde66832d51b24aaa941022f423ce1, type: 3}
+  - {fileID: 7653924086637200736, guid: 589bcebbfb4141e469d7bc6b4d90171d, type: 3}
+  - {fileID: 6658367780876483234, guid: 52df479e6964b874c9bac3d4f70380e5, type: 3}
+  - {fileID: 1607129564220998436, guid: 51585c6ac18085347b1dd2360eedcdbc, type: 3}
+  - {fileID: 537396502959134302, guid: 376423a121b1c874b9f08046cbf8d119, type: 3}
+  - {fileID: 4129644002032013738, guid: e2fa0a02f72063b44a1b27e28a43cb77, type: 3}
+  - {fileID: 2774879062948503197, guid: 0925b95d938349045965ce8804ca74f4, type: 3}
+  - {fileID: 537396502959134302, guid: 350ff5c99e8439e41bae072a6b4157f4, type: 3}
+  - {fileID: 537396502959134302, guid: db11cc09e150f6443be53a52ea846582, type: 3}
+  - {fileID: 4974045186933401179, guid: 4a94d0a270ba1b44ea80c8b8dd8b46d9, type: 3}
+  - {fileID: 537396502959134302, guid: 608c4951d8fb2f2498724470d8997c2f, type: 3}
+  - {fileID: 8616921387438568966, guid: 2ccfecf56caed5045adddfd2398736b2, type: 3}
+  - {fileID: 8111186667990353284, guid: 722666eb72f90a3428cb901a98b4d22a, type: 3}
   _numbersNodes:
   - {fileID: 2774879062948503197, guid: 7a7a643a1397f814bb04a74cbca7dbf9, type: 3}
   - {fileID: 2774879062948503197, guid: bd748881d2dd3864c84cbbb4f3b8f850, type: 3}
@@ -722,8 +771,8 @@ MonoBehaviour:
   - {fileID: 5476975692956312301, guid: f09fbb2341bafb04d8b4d6a888d65188, type: 3}
   - {fileID: 3654340742667006104, guid: d1531350322503240a2d7a69cadd27e2, type: 3}
   - {fileID: 8273358376285508108, guid: a591fe5d3d4622942a4796e9b6dfeb59, type: 3}
-  _maxNodes: 9
-  _quantityNodesPerStep: 0
+  _maxQuantityNodes: 9
+  _quantityNodesPerStep: 3
 --- !u!4 &421741929
 Transform:
   m_ObjectHideFlags: 0
@@ -1120,7 +1169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4a4e3d4a7eb4782a3f7a3096856ed28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _selectionLevelParametersState: {fileID: 369301413}
+  _selectionLevelState: {fileID: 369301413}
   _gameState: {fileID: 643800547}
   _gameOverState: {fileID: 1182132778}
 --- !u!4 &504592015
@@ -1387,13 +1436,14 @@ GameObject:
   - component: {fileID: 643800544}
   - component: {fileID: 643800543}
   - component: {fileID: 643800547}
+  - component: {fileID: 643800548}
   m_Layer: 5
   m_Name: GameScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &643800543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1494,6 +1544,18 @@ MonoBehaviour:
   _gameScreen: {fileID: 643800545}
   _text1: {fileID: 1983227540}
   _text2: {fileID: 589734888}
+--- !u!225 &643800548
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643800542}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1182132777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,6 +1569,7 @@ GameObject:
   - component: {fileID: 1182132780}
   - component: {fileID: 1182132779}
   - component: {fileID: 1182132778}
+  - component: {fileID: 1182132783}
   m_Layer: 5
   m_Name: GameOverScreen
   m_TagString: Untagged
@@ -1614,6 +1677,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &1182132783
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182132777}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1257072462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,7 +1781,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257330644}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1714,7 +1789,7 @@ Transform:
   - {fileID: 1935488822}
   m_Father: {fileID: 519420032}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &1257330646
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -1869,9 +1944,9 @@ ParticleSystem:
     enabled: 1
     startLifetime:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 0.3
-      minScalar: 0.2
+      minMaxState: 0
+      scalar: 0.1
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1923,7 +1998,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 9
+      scalar: 20
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -2355,7 +2430,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    gravitySource: 0
+    gravitySource: 1
     maxNumParticles: 1000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
@@ -6828,7 +6903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameScreen: {fileID: 643800545}
-  _nodeSpawner: {fileID: 421741928}
+  _gameMapCreater: {fileID: 421741928}
 --- !u!4 &1511990548
 Transform:
   m_ObjectHideFlags: 0
@@ -6989,7 +7064,7 @@ Animator:
   m_GameObject: {fileID: 1753447263}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c464f14a794368141903451e1e97cf6b, type: 2}
+  m_Controller: {fileID: 9100000, guid: cdac50a28dce7bd43b972081c58f46d3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -12328,7 +12403,7 @@ Animator:
   m_GameObject: {fileID: 1967505947}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c464f14a794368141903451e1e97cf6b, type: 2}
+  m_Controller: {fileID: 9100000, guid: cdac50a28dce7bd43b972081c58f46d3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -12560,6 +12635,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1182132778}
         m_TargetAssemblyTypeName: States.GameOverState, Assembly-CSharp
         m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 421741928}
+        m_TargetAssemblyTypeName: GameMapCreater, Assembly-CSharp
+        m_MethodName: ResetRandomizer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

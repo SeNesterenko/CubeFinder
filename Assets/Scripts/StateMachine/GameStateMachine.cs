@@ -5,20 +5,20 @@ namespace StateMachine
 {
     public class GameStateMachine : StateMachine
     {
-        [SerializeField] private SelectionLevelParametersState _selectionLevelParametersState;
+        [SerializeField] private SelectionLevelState _selectionLevelState;
         [SerializeField] private GameState _gameState;
         [SerializeField] private GameOverState _gameOverState;
         
         private void Awake()
         {
-            _selectionLevelParametersState.Initialize(this);
+            _selectionLevelState.Initialize(this);
             _gameState.Initialize(this);
             _gameOverState.Initialize(this);
         }
 
-        public SelectionLevelParametersState GetSelectionLevelParametersState()
+        public SelectionLevelState GetSelectionLevelParametersState()
         {
-            return _selectionLevelParametersState;
+            return _selectionLevelState;
         }
 
         public GameState GetGameState()
@@ -33,7 +33,7 @@ namespace StateMachine
 
         protected override BaseState GetInitialState()
         {
-            return _selectionLevelParametersState;
+            return _selectionLevelState;
         }
     }
 }

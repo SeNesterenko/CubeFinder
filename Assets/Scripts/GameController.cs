@@ -4,13 +4,13 @@ using UnityEngine.Events;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private Canvas _gameScreen;
-    [SerializeField] private NodeSpawner _nodeSpawner;
+    [SerializeField] private GameMapCreater _gameMapCreater;
     
     private GameMap _gameMap;
 
     public GameMap Initialize(int typeParams, UnityAction changeState)
     {
-        _gameMap = _nodeSpawner.InstantiateLevel(typeParams, _gameScreen.transform);
+        _gameMap = _gameMapCreater.InstantiateLevel(typeParams, _gameScreen.transform);
         
         foreach (var gameNode in _gameMap.GameNodes)
         {
