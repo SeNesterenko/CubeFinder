@@ -1,3 +1,4 @@
+using DG.Tweening;
 using JetBrains.Annotations;
 using StateMachine;
 using UnityEngine;
@@ -14,10 +15,6 @@ namespace States
 
         [SerializeField] private ParticleSystem _winEffect;
 
-        private IStateContext _context;
-        private GameNode _target;
-        private GameNode _nextTarget;
-
         private static readonly Vector3 DefaultButtonRestartPosition = new(-100f, -120f, 0);
         private static readonly Vector3 AloneButtonRestartPosition = new(0f, -120f, 0);
         
@@ -25,10 +22,15 @@ namespace States
         private static readonly Vector2 RectScaleWonNode = new(600f, 400f);
         private static readonly Vector3 PositionWonNode = new(0f, 80f, 0f);
 
+        private IStateContext _context;
+        private GameNode _target;
+        private CanvasGroup _canvasGroup;
+        
         // ReSharper disable once RedundantOverriddenMember
         public override void Initialize(StateMachine.StateMachine stateMachine)
         {
             base.Initialize(stateMachine);
+            _canvasGroup = _gameOverScreen.GetComponent<CanvasGroup>();
         }
 
         public override void EnterWithContext(IStateContext context)
@@ -36,43 +38,29 @@ namespace States
             var rectTransform = _buttonRestart.gameObject.GetComponent<RectTransform>();
             ReloadButtonPositions(rectTransform);
             
-            _gameOverScreen.gameObject.SetActive(true);
+            _canvasGroup.DOFade(1f,0.5f).OnComplete(() => _gameOverScreen.gameObject.SetActive(true));
             
-            if (context == null)
+            _context = context;
+            _target = _context.CurrentTargetNode;
+            
+            if (context.CurrentQuantityNodes >= context.MaxQuantityNodes)
             {
                 _buttonContinue.gameObject.SetActive(false);
                 rectTransform.localPosition = AloneButtonRestartPosition;
-                
-                _nextTarget = InstantiateGameNode(_nextTarget);
-                _winEffect.Play();
-                return;
             }
-            
-            _context = context;
-            _nextTarget = _context.GetCurrentLevelTargetNode();
-            
-            _target = _context.GetPreviousTargetNode();
+
             _target = InstantiateGameNode(_target);
             _winEffect.Play();
-            
-            Debug.Log(_nextTarget.GetName());
         }
 
         public override void Exit()
         {
-            if (_target != null)
+            _canvasGroup.DOFade(0f,0.5f).OnComplete(() =>
             {
+                _gameOverScreen.gameObject.SetActive(false);
                 Destroy(_target.gameObject);
-                _target = null;
-            }
-            else
-            {
-                Destroy(_nextTarget.gameObject);
-                _nextTarget = null;
-            }
-            
-            _winEffect.Stop();
-            _gameOverScreen.gameObject.SetActive(false);
+                _winEffect.Stop();
+            });
         }
         
         //Call it when a user chooses to restart the game
