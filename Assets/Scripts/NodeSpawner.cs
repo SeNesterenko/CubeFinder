@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class NodeSpawner : MonoBehaviour
 {
+    //test
     [SerializeField] private GameNode[] _numbersNodes;
     [SerializeField] int _maxNodes;
     [SerializeField] private int _quantityNodesPerStep;
