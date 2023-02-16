@@ -585,9 +585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentScreen: {fileID: 369301416}
-  _numbersGameMapFirstLevelPrefab: {fileID: 6493550036384826858, guid: 0db7b87b5043c5c42b29143b583f1a84, type: 3}
-  _lettersGameMapFirstLevelPrefab: {fileID: 6493550036384826858, guid: 592a82bf5e728e749b2870066ec9530f, type: 3}
-  _animalsGameMapFirstLevelPrefab: {fileID: 6493550036384826858, guid: c87f994edc82f5a41a11d0107d1fa091, type: 3}
+  _defaultGameMap: {fileID: 3362309106669496429, guid: df9f6fbd720904349862d22eba28ec9b, type: 3}
 --- !u!114 &369301414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,6 +698,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bdf772c9151b3b46ba5217b428d6a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameMapPrefab: {fileID: 3362309106669496429, guid: df9f6fbd720904349862d22eba28ec9b, type: 3}
+  _lettersNodes: []
+  _animalsNodes: []
   _numbersNodes:
   - {fileID: 2774879062948503197, guid: 7a7a643a1397f814bb04a74cbca7dbf9, type: 3}
   - {fileID: 2774879062948503197, guid: bd748881d2dd3864c84cbbb4f3b8f850, type: 3}
@@ -722,7 +723,7 @@ MonoBehaviour:
   - {fileID: 3654340742667006104, guid: d1531350322503240a2d7a69cadd27e2, type: 3}
   - {fileID: 8273358376285508108, guid: a591fe5d3d4622942a4796e9b6dfeb59, type: 3}
   _maxNodes: 9
-  quantityNodesPerStep: 3
+  _quantityNodesPerStep: 0
 --- !u!4 &421741929
 Transform:
   m_ObjectHideFlags: 0
@@ -6827,6 +6828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameScreen: {fileID: 643800545}
+  _nodeSpawner: {fileID: 421741928}
 --- !u!4 &1511990548
 Transform:
   m_ObjectHideFlags: 0
