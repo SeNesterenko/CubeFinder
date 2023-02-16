@@ -49,9 +49,9 @@ namespace States
             }
             
             _context = context;
-            _nextTarget = _context.GetCurrentLevelTargetNode();
+            //_nextTarget = _context.GetCurrentLevelTargetNode();
             
-            _target = _context.GetPreviousTargetNode();
+            //_target = _context.GetPreviousTargetNode();
             _target = InstantiateGameNode(_target);
             _winEffect.Play();
             

@@ -1,4 +1,3 @@
-using System;
 using JetBrains.Annotations;
 using StateMachine;
 using TMPro;
@@ -24,13 +23,11 @@ namespace States
 
         public override void EnterWithContext(IStateContext context)
         {
-            _context = context;
-
-            _text1.text = "Find" + _context.GetCurrentLevelTargetNode().GetName();
-            _text2.text = "Find" + _context.GetCurrentLevelTargetNode().GetName();
-
             _gameScreen.gameObject.SetActive(true);
-            _gameController.Initialize(_context.GetCurrentLevel(), _context.GetCurrentLevelTargetNode(), ChangeState);
+            _context = _gameController.Initialize(_context.TypeParams, ChangeState);
+            
+            _text1.text = "Find" + _context.CurrentTargetNode.GetName();
+            _text2.text = "Find" + _context.CurrentTargetNode.GetName();
         }
 
         public override void Exit()
@@ -44,7 +41,7 @@ namespace States
         public void ChangeState()
         {
             StateMachine.ChangeStateWithContext(((GameStateMachine)StateMachine).GetGameOverState(),
-                _context.GetNextLevel());
+                _context);
         }
     }
 }

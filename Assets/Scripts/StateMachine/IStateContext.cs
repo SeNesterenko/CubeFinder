@@ -2,10 +2,8 @@ namespace StateMachine
 {
     public interface IStateContext
     {
+        public int TypeParams { get; set; }
+        public GameNode CurrentTargetNode { get; set; }
         public GameMap GetCurrentLevel();
-        public GameNode[] GetGameNodes();
-        public GameNode GetCurrentLevelTargetNode();
-        public GameNode GetPreviousTargetNode();
-        public GameMap GetNextLevel();
     }
 }

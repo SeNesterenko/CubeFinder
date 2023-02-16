@@ -6,19 +6,9 @@ namespace States
 {
     public class SelectionLevelParametersState : BaseState
     {
-        private enum LevelParams
-        {
-            Numbers = 0,
-            Letters = 1,
-            Animals = 2
-        }
-        
         [SerializeField] private Canvas _currentScreen;
-        
-        [SerializeField] private GameMap _numbersGameMapFirstLevelPrefab;
-        [SerializeField] private GameMap _lettersGameMapFirstLevelPrefab;
-        [SerializeField] private GameMap _animalsGameMapFirstLevelPrefab;
-        
+        [SerializeField] private GameMap _defaultGameMap;
+
         // ReSharper disable once RedundantOverriddenMember
         public override void Initialize(StateMachine.StateMachine stateMachine)
         {
@@ -39,18 +29,8 @@ namespace States
         [UsedImplicitly]
         public void ChangeState(int typeParams)
         {
-            switch (typeParams)
-            {
-                case  (int)LevelParams.Numbers:
-                    StateMachine.ChangeStateWithContext(((GameStateMachine) StateMachine).GetGameState(), _numbersGameMapFirstLevelPrefab);
-                    break;
-                case  (int)LevelParams.Letters:
-                    StateMachine.ChangeStateWithContext(((GameStateMachine) StateMachine).GetGameState(), _lettersGameMapFirstLevelPrefab);
-                    break;
-                case  (int)LevelParams.Animals:
-                    StateMachine.ChangeStateWithContext(((GameStateMachine) StateMachine).GetGameState(), _animalsGameMapFirstLevelPrefab);
-                    break;
-            }
+            _defaultGameMap.TypeParams = typeParams;
+            StateMachine.ChangeStateWithContext(((GameStateMachine) StateMachine).GetGameState(), _defaultGameMap);
         }
     }
 }
