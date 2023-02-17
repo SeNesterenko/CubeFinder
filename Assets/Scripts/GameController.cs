@@ -23,6 +23,14 @@ public class GameController : MonoBehaviour
         return _gameMap;
     }
 
+    public void ChangeStateOfNodes()
+    {
+        foreach (var gameMapGameNode in _gameMap.GameNodes)
+        {
+            
+        }
+    }
+
     public void ResetNodes()
     {
         Destroy(_gameMap.gameObject);
