@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,11 +24,13 @@ public class GameController : MonoBehaviour
         return _gameMap;
     }
 
+    //Call it when timerToView is over
+    [UsedImplicitly]
     public void ChangeStateOfNodes()
     {
-        foreach (var gameMapGameNode in _gameMap.GameNodes)
+        foreach (var gameNode in _gameMap.GameNodes)
         {
-            
+            gameNode.DeleteContent();
         }
     }
 

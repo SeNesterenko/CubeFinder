@@ -230,6 +230,7 @@ MonoBehaviour:
   _shakeRandomness: 90
   _name: Unicorn
   _button: {fileID: 2091790105627472725}
+  _content: {fileID: 8164762312186451449}
 --- !u!95 &5970374379692131912
 Animator:
   serializedVersion: 4

@@ -154,6 +154,7 @@ MonoBehaviour:
   _shakeRandomness: 90
   _name: Deer
   _button: {fileID: 7413955118314955600}
+  _content: {fileID: 4559956409181986454}
 --- !u!95 &2695992780039938168
 Animator:
   serializedVersion: 4

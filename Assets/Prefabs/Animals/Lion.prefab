@@ -154,6 +154,7 @@ MonoBehaviour:
   _shakeRandomness: 90
   _name: Lion
   _button: {fileID: 8448834359397426827}
+  _content: {fileID: 4657597319562520618}
 --- !u!95 &8797565233953771727
 Animator:
   serializedVersion: 4

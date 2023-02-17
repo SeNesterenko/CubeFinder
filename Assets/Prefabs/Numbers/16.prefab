@@ -154,6 +154,7 @@ MonoBehaviour:
   _shakeRandomness: 90
   _name: 16
   _button: {fileID: 1531149455566719004}
+  _content: {fileID: 9117789391286644726}
 --- !u!95 &5736264223042480812
 Animator:
   serializedVersion: 4

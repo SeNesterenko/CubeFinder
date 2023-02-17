@@ -154,6 +154,7 @@ MonoBehaviour:
   _shakeRandomness: 90
   _name: Fox
   _button: {fileID: 5793090350988671368}
+  _content: {fileID: 588113005318409161}
 --- !u!95 &7550879925199292833
 Animator:
   serializedVersion: 4

@@ -11,7 +11,8 @@ public class GameNode : MonoBehaviour
     
     [SerializeField] private string _name;
     [SerializeField] private Button _button;
-    
+    [SerializeField] private GameObject _content;
+
     public string GetName()
     {
         return _name;
@@ -26,5 +27,10 @@ public class GameNode : MonoBehaviour
     {
         transform.DOShakePosition(_shakeDuration, _shakeStrength, _shakeVibrato, _shakeRandomness).
             SetLoops(-1,LoopType.Yoyo);
+    }
+
+    public void DeleteContent()
+    {
+        Destroy(_content);
     }
 }

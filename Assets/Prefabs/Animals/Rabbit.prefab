@@ -154,6 +154,7 @@ MonoBehaviour:
   _shakeRandomness: 90
   _name: Rabbit
   _button: {fileID: 910718848327478626}
+  _content: {fileID: 9142941672791973045}
 --- !u!95 &4211705346098583792
 Animator:
   serializedVersion: 4

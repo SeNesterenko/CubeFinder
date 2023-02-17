@@ -230,6 +230,7 @@ MonoBehaviour:
   _shakeRandomness: 90
   _name: Hamster
   _button: {fileID: 8800028622282482009}
+  _content: {fileID: 4195602148425880428}
 --- !u!95 &6497189143642236207
 Animator:
   serializedVersion: 4

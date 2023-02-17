@@ -154,6 +154,7 @@ MonoBehaviour:
   _shakeRandomness: 90
   _name: Cat
   _button: {fileID: 5679576844539354471}
+  _content: {fileID: 4364038587757571248}
 --- !u!95 &8647077625905506549
 Animator:
   serializedVersion: 4

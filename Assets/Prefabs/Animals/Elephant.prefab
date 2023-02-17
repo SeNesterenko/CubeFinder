@@ -230,6 +230,7 @@ MonoBehaviour:
   _shakeRandomness: 90
   _name: Elephant
   _button: {fileID: 8065468074752526099}
+  _content: {fileID: 4242265915088320060}
 --- !u!95 &-8127117617438168774
 Animator:
   serializedVersion: 4

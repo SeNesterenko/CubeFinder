@@ -154,6 +154,7 @@ MonoBehaviour:
   _shakeRandomness: 90
   _name: Monkey
   _button: {fileID: 1199473665283433265}
+  _content: {fileID: 6849813114886772090}
 --- !u!95 &8082275346936855003
 Animator:
   serializedVersion: 4
