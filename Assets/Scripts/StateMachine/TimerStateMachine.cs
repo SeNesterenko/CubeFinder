@@ -5,25 +5,18 @@ namespace StateMachine
 {
     public class TimerStateMachine : StateMachine
     {
-        [SerializeField] private TimerToViewState _timerToViewState;
-        [SerializeField] private TimerToChooseState _timerToChooseState;
+        [SerializeField] private ActiveTimerState _activeTimerState;
         [SerializeField] private PassiveTimerState _passiveTimerState;
         
         private void Awake()
         {
-            _timerToViewState.Initialize(this);
-            _timerToChooseState.Initialize(this);
+            _activeTimerState.Initialize(this);
             _passiveTimerState.Initialize(this);
         }
 
-        public TimerToViewState GetTimerToView()
+        public ActiveTimerState GetTimerToView()
         {
-            return _timerToViewState;
-        }
-        
-        public TimerToChooseState GetTimerToChoose()
-        {
-            return _timerToChooseState;
+            return _activeTimerState;
         }
 
         public PassiveTimerState GetPassiveTimerState()

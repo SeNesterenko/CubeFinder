@@ -357,8 +357,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4283796735
-  m_fontColor: {r: 1, g: 0.54990566, b: 0.3339622, a: 1}
+    rgba: 4278190797
+  m_fontColor: {r: 0.8039216, g: 0.007843138, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1693,8 +1693,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4283796735
-  m_fontColor: {r: 1, g: 0.54990566, b: 0.3339622, a: 1}
+    rgba: 4278190797
+  m_fontColor: {r: 0.8039216, g: 0.007843138, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -6817,8 +6817,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4283796735
-  m_fontColor: {r: 1, g: 0.54990566, b: 0.3339622, a: 1}
+    rgba: 4278190797
+  m_fontColor: {r: 0.8039216, g: 0.007843138, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -11769,7 +11769,7 @@ GameObject:
   - component: {fileID: 1163186211}
   - component: {fileID: 1163186212}
   m_Layer: 0
-  m_Name: TimerToViewState
+  m_Name: ActiveTimerState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11817,10 +11817,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _leftUpTimer: {fileID: 2035874786}
-  _rightUpTimer: {fileID: 810779835}
-  _leftDownTimer: {fileID: 102747118}
-  _rightDownTimer: {fileID: 626613264}
+  _timers:
+  - {fileID: 2035874786}
+  - {fileID: 102747118}
+  - {fileID: 810779835}
+  - {fileID: 626613264}
   _timeToView: 5
 --- !u!1 &1182132777
 GameObject:
@@ -11955,55 +11956,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &1227286840
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1227286841}
-  - component: {fileID: 1227286842}
-  m_Layer: 0
-  m_Name: TimerToChooseState
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1227286841
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227286840}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1405090645}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1227286842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1227286840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a063a811cc845bab6e0945b25678013, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _leftUpTimer: {fileID: 2035874786}
-  _rightUpTimer: {fileID: 810779835}
-  _leftDownTimer: {fileID: 102747118}
-  _rightDownTimer: {fileID: 626613264}
-  _timeToChoose: 5
 --- !u!1 &1257072462
 GameObject:
   m_ObjectHideFlags: 0
@@ -12371,7 +12323,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1163186211}
-  - {fileID: 1227286841}
   - {fileID: 117445145}
   m_Father: {fileID: 716828526}
   m_RootOrder: -1
@@ -12420,8 +12371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a976a6b5e65d4f0989eb84ea299d9395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timerToViewState: {fileID: 1163186212}
-  _timerToChooseState: {fileID: 1227286842}
+  _activeTimerState: {fileID: 1163186212}
   _passiveTimerState: {fileID: 117445146}
 --- !u!1 &1485430418
 GameObject:
@@ -13382,8 +13332,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4283796735
-  m_fontColor: {r: 1, g: 0.54990566, b: 0.3339622, a: 1}
+    rgba: 4278190797
+  m_fontColor: {r: 0.8039216, g: 0.009220265, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

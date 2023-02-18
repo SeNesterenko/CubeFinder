@@ -6,15 +6,10 @@ using UnityEngine.Events;
 
 namespace TimerStates
 {
-    public class TimerToViewState : BaseState
+    public class ActiveTimerState : BaseState
     {
         [SerializeField] private UnityEvent _onTimeIsUp;
-        
-        [SerializeField] private TMP_Text _leftUpTimer;
-        [SerializeField] private TMP_Text _rightUpTimer;
-        [SerializeField] private TMP_Text _leftDownTimer;
-        [SerializeField] private TMP_Text _rightDownTimer;
-        
+        [SerializeField] private TMP_Text[] _timers;
         [SerializeField] private float _timeToView = 5f;
 
         private float _currentTime;
@@ -36,22 +31,17 @@ namespace TimerStates
             if (_currentTime <= 0)
             {
                 _onTimeIsUp.Invoke();
-                StateMachine.ChangeState(((TimerStateMachine)StateMachine).GetTimerToChoose());
+                StateMachine.ChangeState(((TimerStateMachine)StateMachine).GetPassiveTimerState());
             }
             else
             {
                 _currentTime -= Time.deltaTime;
                 
-                _leftUpTimer.text = Math.Round(_currentTime, 2).ToString();
-                _rightUpTimer.text = Math.Round(_currentTime, 2).ToString();
-                _leftDownTimer.text = Math.Round(_currentTime, 2).ToString();
-                _rightDownTimer.text = Math.Round(_currentTime, 2).ToString();
+                foreach (var text in _timers)
+                {
+                    text.text = Math.Round(_currentTime, 0).ToString();
+                }
             }
-        }
-
-        public override void Exit()
-        {
-            Debug.Log("Exit from TimerToView");
         }
     }
 }
