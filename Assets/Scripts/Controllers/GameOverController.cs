@@ -10,7 +10,7 @@ namespace Controllers
         [SerializeField] private Button _buttonRestart;
     
         [SerializeField] private ParticleSystem _winEffect;
-    
+        [SerializeField] private AudioSource _winSound;
         private static readonly Vector3 DefaultButtonRestartPosition = new(-100f, -120f, 0);
         private static readonly Vector3 AloneButtonRestartPosition = new(0f, -120f, 0);
         
@@ -31,6 +31,7 @@ namespace Controllers
         
             var target = InstantiateGameNode(gameMap.CurrentTargetNode, gameOverScreen);
             _winEffect.Play();
+            _winSound.Play();
 
             return target;
         }
@@ -38,6 +39,7 @@ namespace Controllers
         public void StopGameOverController()
         {
             _winEffect.Stop();
+            _winSound.Stop();
         }
     
         private GameNode InstantiateGameNode(GameNode node, Transform gameOverScreen)
