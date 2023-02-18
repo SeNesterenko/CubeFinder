@@ -155,6 +155,7 @@ MonoBehaviour:
   _name: D
   _button: {fileID: 2151631688964724508}
   _content: {fileID: 7340107225612187825}
+  _backgroundColor: {fileID: 7045064235412093743}
 --- !u!95 &-531328260331660544
 Animator:
   serializedVersion: 4

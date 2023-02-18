@@ -155,6 +155,7 @@ MonoBehaviour:
   _name: Cow
   _button: {fileID: 2494460621339926244}
   _content: {fileID: 6389524846727753965}
+  _backgroundColor: {fileID: 8801950021557686877}
 --- !u!95 &8854363615120160973
 Animator:
   serializedVersion: 4

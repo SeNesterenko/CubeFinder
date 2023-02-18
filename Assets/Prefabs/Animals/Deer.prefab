@@ -155,6 +155,7 @@ MonoBehaviour:
   _name: Deer
   _button: {fileID: 7413955118314955600}
   _content: {fileID: 4559956409181986454}
+  _backgroundColor: {fileID: 4059440379600217026}
 --- !u!95 &2695992780039938168
 Animator:
   serializedVersion: 4

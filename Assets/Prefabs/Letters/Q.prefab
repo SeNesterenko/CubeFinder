@@ -290,6 +290,7 @@ MonoBehaviour:
   _name: Q
   _button: {fileID: 7631158199627915921}
   _content: {fileID: 2903391392106671767}
+  _backgroundColor: {fileID: 8221069902875784832}
 --- !u!95 &7870664781541385719
 Animator:
   serializedVersion: 4

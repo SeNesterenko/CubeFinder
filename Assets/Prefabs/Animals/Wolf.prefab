@@ -155,6 +155,7 @@ MonoBehaviour:
   _name: Wolf
   _button: {fileID: 5014135699602269408}
   _content: {fileID: 5426829289196391348}
+  _backgroundColor: {fileID: 2158464469205642575}
 --- !u!95 &6900589718482742325
 Animator:
   serializedVersion: 4

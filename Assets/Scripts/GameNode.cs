@@ -12,7 +12,13 @@ public class GameNode : MonoBehaviour
     [SerializeField] private string _name;
     [SerializeField] private Button _button;
     [SerializeField] private GameObject _content;
+    [SerializeField] private Image _backgroundColor;
 
+    public void SetBackGroundColor(Color color)
+    {
+        _backgroundColor.color = color;
+    }
+    
     public string GetName()
     {
         return _name;

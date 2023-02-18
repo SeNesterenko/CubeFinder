@@ -292,6 +292,7 @@ MonoBehaviour:
   _name: G
   _button: {fileID: 5260905514143038036}
   _content: {fileID: 508624916060128261}
+  _backgroundColor: {fileID: 262506286560288440}
 --- !u!95 &4007387584214541523
 Animator:
   serializedVersion: 4

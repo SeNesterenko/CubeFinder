@@ -155,6 +155,7 @@ MonoBehaviour:
   _name: Fox
   _button: {fileID: 5793090350988671368}
   _content: {fileID: 588113005318409161}
+  _backgroundColor: {fileID: 1047601180669731177}
 --- !u!95 &7550879925199292833
 Animator:
   serializedVersion: 4

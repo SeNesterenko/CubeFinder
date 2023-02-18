@@ -2,10 +2,9 @@ namespace StateMachine
 {
     public interface IStateContext
     {
-        public int CurrentQuantityNodes { get; set; }
-        public int MaxQuantityNodes { get; set; }
-        public int TypeParams { get; set; }
-        public GameNode CurrentTargetNode { get; set; }
-        public GameMap GetCurrentLevel();
+        public int CurrentQuantityNodes { get; }
+        public int MaxQuantityNodes { get; }
+        public int TypeParams { get; }
+        public GameNode CurrentTargetNode { get; }
     }
 }

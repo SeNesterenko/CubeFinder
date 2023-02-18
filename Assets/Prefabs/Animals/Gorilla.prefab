@@ -231,6 +231,7 @@ MonoBehaviour:
   _name: Gorilla
   _button: {fileID: 2926620003798405560}
   _content: {fileID: 3350868079874738907}
+  _backgroundColor: {fileID: 3186534466641490701}
 --- !u!95 &6366127011990103403
 Animator:
   serializedVersion: 4

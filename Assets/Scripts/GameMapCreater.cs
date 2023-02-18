@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameMapCreater : MonoBehaviour
 {
@@ -38,9 +37,8 @@ public class GameMapCreater : MonoBehaviour
         
         for (var i = 0; i < nodesPrefabs.Length; i++)
         {
-            nodesPrefabs[i].GetComponent<Image>().color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+            nodesPrefabs[i].SetBackGroundColor(Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
             currentNodes[i] = Instantiate(nodesPrefabs[i], gameMap.transform);
-            
         }
 
         var indexRandomNode = Random.Range(0, currentNodes.Length);

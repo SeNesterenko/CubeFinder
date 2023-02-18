@@ -1,5 +1,4 @@
-using System;
-using States;
+using GameStates;
 using UnityEngine;
 
 namespace StateMachine

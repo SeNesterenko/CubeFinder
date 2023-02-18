@@ -34,11 +34,6 @@ namespace StateMachine
             _currentState?.UpdateLogic();
         }
 
-        private void LateUpdate()
-        {
-            _currentState?.UpdatePhysics();
-        }
-
         private void ReloadState(BaseState newState)
         {
             _currentState.Exit();

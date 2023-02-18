@@ -155,6 +155,7 @@ MonoBehaviour:
   _name: 4
   _button: {fileID: 1199473665283433265}
   _content: {fileID: 8268485428155516157}
+  _backgroundColor: {fileID: 8343965092141666507}
 --- !u!95 &2016653104934054996
 Animator:
   serializedVersion: 4

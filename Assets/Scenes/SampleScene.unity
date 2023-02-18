@@ -778,6 +778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _selectionLevelScreen: {fileID: 369301416}
   _defaultGameMap: {fileID: 3362309106669496429, guid: df9f6fbd720904349862d22eba28ec9b, type: 3}
+  _canvasGroup: {fileID: 369301418}
 --- !u!114 &369301414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1781,7 +1782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &643800543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1884,8 +1885,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameController: {fileID: 1511990547}
   _gameScreen: {fileID: 643800545}
-  _text1: {fileID: 1983227540}
-  _text2: {fileID: 589734888}
+  _canvasGroup: {fileID: 643800548}
+  _targetText:
+  - {fileID: 589734888}
+  - {fileID: 1983227540}
 --- !u!225 &643800548
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1910,7 +1913,7 @@ GameObject:
   - component: {fileID: 643881401}
   - component: {fileID: 643881400}
   m_Layer: 0
-  m_Name: Salute
+  m_Name: WinEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6724,7 +6727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 716828526}
   m_Layer: 0
-  m_Name: GameLogicObjects
+  m_Name: GameLogicControllers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6744,6 +6747,7 @@ Transform:
   m_Children:
   - {fileID: 421741929}
   - {fileID: 1511990548}
+  - {fileID: 940263245}
   - {fileID: 504592015}
   - {fileID: 1420342250}
   - {fileID: 1405090645}
@@ -6885,6 +6889,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810779833}
   m_CullTransparentMesh: 1
+--- !u!1 &940263244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 940263245}
+  - component: {fileID: 940263246}
+  m_Layer: 0
+  m_Name: GameOverController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &940263245
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940263244}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 716828526}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &940263246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940263244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43401151647e4ecab8780a7fd2b02a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buttonContinue: {fileID: 461865331}
+  _buttonRestart: {fileID: 2089226744}
+  _winEffect: {fileID: 643881401}
 --- !u!1 &996386086
 GameObject:
   m_ObjectHideFlags: 0
@@ -11857,9 +11908,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameOverScreen: {fileID: 1182132781}
-  _buttonContinue: {fileID: 461865331}
-  _buttonRestart: {fileID: 2089226744}
-  _winEffect: {fileID: 643881401}
+  _gameOverController: {fileID: 940263246}
+  _canvasGroup: {fileID: 1182132783}
 --- !u!114 &1182132779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12402,8 +12452,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 369301417}
-  - {fileID: 1182132782}
   - {fileID: 643800546}
+  - {fileID: 1182132782}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

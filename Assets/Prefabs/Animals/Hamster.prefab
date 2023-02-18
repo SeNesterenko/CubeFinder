@@ -231,6 +231,7 @@ MonoBehaviour:
   _name: Hamster
   _button: {fileID: 8800028622282482009}
   _content: {fileID: 4195602148425880428}
+  _backgroundColor: {fileID: 4435199253203277242}
 --- !u!95 &6497189143642236207
 Animator:
   serializedVersion: 4

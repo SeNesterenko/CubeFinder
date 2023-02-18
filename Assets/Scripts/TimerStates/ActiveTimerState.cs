@@ -23,7 +23,6 @@ namespace TimerStates
         public override void Enter()
         {
             _currentTime = _timeToView;
-            Debug.Log("Enter to TimerToView");
         }
 
         public override void UpdateLogic()

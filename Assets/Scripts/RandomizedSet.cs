@@ -6,24 +6,23 @@ public class RandomizedSet
     private Dictionary<GameNode,int> _dictionaryValueIndex = new ();
     private List<GameNode> _values = new ();
 
-    public bool Insert(GameNode val) 
+    public void Insert(GameNode val) 
     {
         if (_dictionaryValueIndex.ContainsKey(val))
         {
-            return false;
+            return;
         }
 
         _values.Add(val);
         var index = _values.Count - 1;
         _dictionaryValueIndex[val] = index;
-        return true;
     }
     
-    public bool Remove(GameNode val) 
+    public void Remove(GameNode val) 
     {
         if (!_dictionaryValueIndex.ContainsKey(val))
         {
-            return false;
+            return;
         }
 
         var index = _dictionaryValueIndex[val];
@@ -32,7 +31,6 @@ public class RandomizedSet
         _dictionaryValueIndex[_values[index]] = index;
         _values.RemoveAt(_values.Count - 1);
         _dictionaryValueIndex.Remove(val);
-        return true;
     }
     
     public GameNode GetRandom() 

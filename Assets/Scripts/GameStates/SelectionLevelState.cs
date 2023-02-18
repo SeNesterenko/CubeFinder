@@ -3,25 +3,24 @@ using JetBrains.Annotations;
 using StateMachine;
 using UnityEngine;
 
-namespace States
+namespace GameStates
 {
     public class SelectionLevelState : BaseState
     {
         [SerializeField] private Canvas _selectionLevelScreen;
         [SerializeField] private GameMap _defaultGameMap;
-
-        private CanvasGroup _canvasGroup;
+        [SerializeField] private CanvasGroup _canvasGroup;
 
         // ReSharper disable once RedundantOverriddenMember
         public override void Initialize(StateMachine.StateMachine stateMachine)
         {
             base.Initialize(stateMachine);
-            _canvasGroup = _selectionLevelScreen.GetComponent<CanvasGroup>();
         }
 
         public override void Enter()
         {
-            _canvasGroup.DOFade(1f,0.5f).OnComplete(() => _selectionLevelScreen.gameObject.SetActive(true));
+            _selectionLevelScreen.gameObject.SetActive(true);
+            _canvasGroup.DOFade(1f,0.5f);
         }
 
         public override void Exit()

@@ -14,7 +14,6 @@ namespace StateMachine
         public virtual void Enter() { }
         public virtual void EnterWithContext(IStateContext context) { }
         public virtual void UpdateLogic() { }
-        public virtual void UpdatePhysics() { }
         public virtual void Exit() { }
     }
 }

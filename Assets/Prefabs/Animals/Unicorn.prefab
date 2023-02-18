@@ -231,6 +231,7 @@ MonoBehaviour:
   _name: Unicorn
   _button: {fileID: 2091790105627472725}
   _content: {fileID: 8164762312186451449}
+  _backgroundColor: {fileID: 8895827912820277388}
 --- !u!95 &5970374379692131912
 Animator:
   serializedVersion: 4
