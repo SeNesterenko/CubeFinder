@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using TimerStates;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,6 +7,7 @@ namespace Controllers
 {
     public class GameController : MonoBehaviour
     {
+        [SerializeField] private ActiveTimerState _activeTimerState;
         [SerializeField] private Canvas _gameScreen;
         [SerializeField] private GameMapCreater _gameMapCreater;
     
@@ -20,6 +22,7 @@ namespace Controllers
                 if (gameNode.GetName() == _gameMap.CurrentTargetNode.GetName())
                 {
                     gameNode.GetButton().onClick.AddListener(changeState);
+                    gameNode.GetButton().onClick.AddListener(_activeTimerState.ChangeState);
                 }
             }
 

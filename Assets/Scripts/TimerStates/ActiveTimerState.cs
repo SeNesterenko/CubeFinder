@@ -42,5 +42,10 @@ namespace TimerStates
                 }
             }
         }
+
+        public void ChangeState()
+        {
+            StateMachine.ChangeState(((TimerStateMachine)StateMachine).GetPassiveTimerState());
+        }
     }
 }

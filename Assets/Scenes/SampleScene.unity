@@ -12833,6 +12833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d989bd60afef141a1703a1248e2bb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _activeTimerState: {fileID: 1163186212}
   _gameScreen: {fileID: 643800545}
   _gameMapCreater: {fileID: 421741928}
 --- !u!4 &1511990548
