@@ -37,6 +37,7 @@ public class GameNode : MonoBehaviour
 
     public void DeleteContent()
     {
-        Destroy(_content);
+        transform.DORotate(new Vector3(0, 360, 0), 2f, RotateMode.FastBeyond360)
+            .OnComplete(() => Destroy(_content));
     }
 }
