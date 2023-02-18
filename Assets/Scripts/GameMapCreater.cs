@@ -39,6 +39,7 @@ public class GameMapCreater : MonoBehaviour
         {
             nodesPrefabs[i].SetBackGroundColor(Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
             currentNodes[i] = Instantiate(nodesPrefabs[i], gameMap.transform);
+            currentNodes[i].AppearNode(gameMap.transform);
         }
 
         var indexRandomNode = Random.Range(0, currentNodes.Length);

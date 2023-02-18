@@ -40,4 +40,9 @@ public class GameNode : MonoBehaviour
         transform.DORotate(new Vector3(0, 360, 0), 2f, RotateMode.FastBeyond360)
             .OnComplete(() => Destroy(_content));
     }
+
+    public void AppearNode(Transform transform)
+    {
+        transform.DOJump(transform.position, 5f, 1, 1f);
+    }
 }
