@@ -41,8 +41,8 @@ public class GameNode : MonoBehaviour
             .OnComplete(() => Destroy(_content));
     }
 
-    public void AppearNode(Transform transform)
+    public void AppearNode(Transform parent)
     {
-        transform.DOJump(transform.position, 5f, 1, 1f);
+        parent.DOJump(transform.position, 5f, 1, 1f);
     }
 }
